@@ -1,0 +1,38 @@
+﻿@model Lab5.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyView</title>
+</head>
+<body>
+    <div> 
+        @{
+            Lab5.Models.Employee emp = (Lab5.Models.Employee)
+                ViewBag.Employee;
+        }
+        [_b_]Employee Details
+
+
+        Employee Name: @Model.FirstName @Model.LastName
+        @if(Model.Salary>15000)
+        {
+            <span style="background-color: yellow">
+                Employee salary: @Model.Salary.ToString("C")
+            </span>
+        }
+        else
+        {
+            <span style="background-color: green">
+                Employee Salary: @Model.Salary.ToString("C")
+            </span>
+        }
+    </div>
+</body>
+</html>
